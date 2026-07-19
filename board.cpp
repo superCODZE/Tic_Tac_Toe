@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
+
 using namespace std;
+
 
 
 class Board {
@@ -53,6 +55,37 @@ class Board {
       return true;
     }
 
+    
+   void MakeMove(int row, int col, char symbol) {
+         
+      board[row][col] = symbol;
+         
+   }
+
+
+   void emptyBoard(){
+
+      for(int i = 0 ; i<3 ; i++){
+         for(int j = 0 ; j<3 ; j++){
+            board[i][j] = ' ';
+               
+            
+         }
+      }
+      
+   }
+
+
+
+
+
+
+   char getCase(int row , int col){
+      return board[row][col];
+   }
+
+
 
 
 };
+
