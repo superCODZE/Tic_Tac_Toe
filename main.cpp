@@ -15,6 +15,7 @@ void DisplayBanner(){
   |_| |___\____|   |_/_/   \_\____|   |_| \___/|_____|
   )" << endl;
   cout << "               The game has been started           " << endl;
+  cout << "=======================================================" << endl;
           
 }
 
@@ -34,17 +35,18 @@ int main() {
         cout << "the current player is: " << player.getSymbol() << endl;
         etq1: cout << "Enter row (0-2): ";
         cin >> row;
-        etq2: cout << "Enter column (0-2): ";
-        cin >> col;
-       
 
-        if (row < 0 ){
+        
+        if (row < 0 || row > 2){
 
             goto etq1;
 
         }
 
-        if (col < 0){
+        etq2: cout << "Enter column (0-2): ";
+        cin >> col;
+       
+        if (col < 0 || col >2 ){
 
             goto etq2;
 
@@ -63,7 +65,7 @@ int main() {
         } else {
             player.setSymbol('X');
         }
-
+        cout << "=======================================================" << endl;
     }
      gameBoard.DisplayBoard();
 
@@ -86,6 +88,7 @@ int main() {
     cin >> repeat;
     repeat = tolower(repeat);
     if (repeat == 'y'){
+        cout << "=======================================================" << endl;
        gameBoard.emptyBoard();
        goto etq3;
     }
